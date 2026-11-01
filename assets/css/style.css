@@ -1,0 +1,532 @@
+/* ==========================================================================
+   1. RESET & VARIABLES
+   ========================================================================== */
+:root {
+  --primary: #2e7d32;
+  --primary-hover: #1b5e20;
+  --secondary: #6c757d;
+  --secondary-hover: #5a6268;
+  --bg-color: #f4f6f8;
+  --card-bg: #ffffff;
+  --text-color: #333333;
+  --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  line-height: 1.6;
+}
+
+.container {
+  width: 100%;
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+/* ==========================================================================
+   2. HEADER & TOGGLE BAR NAVIGASI
+   ========================================================================== */
+.header {
+  background-color: var(--primary);
+  color: white;
+  padding: 1rem 0;
+  box-shadow: var(--shadow);
+  margin-bottom: 2rem;
+}
+
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-size: 1.3rem;
+  font-weight: 700;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.nav-link {
+  color: white;
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 1.8rem;
+  cursor: pointer;
+  padding: 0.2rem 0.5rem;
+}
+
+/* ==========================================================================
+   3. HERO & GRID COMPONENT (INDEX.HTML)
+   ========================================================================== */
+.hero-card {
+  text-align: center;
+  padding: 3rem 1.5rem;
+  background: linear-gradient(135deg, #ffffff 0%, #f0fdf4 100%);
+  border: 1px solid #dcfce7;
+  border-radius: 8px;
+  box-shadow: var(--shadow);
+  margin-bottom: 2rem;
+}
+
+.hero-badge {
+  display: inline-block;
+  background-color: #dcfce7;
+  color: var(--primary);
+  font-size: 0.85rem;
+  font-weight: 700;
+  padding: 0.35rem 0.85rem;
+  border-radius: 20px;
+  margin-bottom: 1rem;
+}
+
+.hero-card h1 {
+  font-size: 2rem;
+  color: #14532d;
+  margin-bottom: 0.75rem;
+}
+
+.hero-card p {
+  font-size: 1rem;
+  color: #4b5563;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+  margin-bottom: 3rem;
+}
+
+.stat-card {
+  background: white;
+  padding: 1.25rem 0.5rem;
+  border-radius: 8px;
+  text-align: center;
+  box-shadow: var(--shadow);
+}
+
+.stat-card h3 {
+  font-size: 1.4rem;
+  color: var(--primary);
+}
+
+.stat-card p {
+  font-size: 0.8rem;
+  color: #6b7280;
+}
+
+.section-title {
+  text-align: center;
+  font-size: 1.5rem;
+  color: var(--text-color);
+  margin-bottom: 0.3rem;
+}
+
+.section-subtitle {
+  text-align: center;
+  color: #6b7280;
+  margin-bottom: 1.5rem;
+  font-size: 0.9rem;
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.25rem;
+  margin-bottom: 3rem;
+}
+
+.feature-card {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: var(--shadow);
+}
+
+.feature-icon {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.feature-card h3 {
+  font-size: 1.1rem;
+  margin-bottom: 0.4rem;
+}
+
+.feature-card p {
+  font-size: 0.88rem;
+  color: #6b7280;
+}
+
+.about-section {
+  background-color: #ffffff;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: var(--shadow);
+  margin-bottom: 3rem;
+}
+
+.about-section h2 {
+  color: var(--primary);
+  margin-bottom: 0.75rem;
+}
+
+.steps-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.25rem;
+  margin-bottom: 3rem;
+}
+
+.step-card {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: var(--shadow);
+  text-align: center;
+}
+
+.step-number {
+  width: 36px;
+  height: 36px;
+  background-color: var(--primary);
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  margin: 0 auto 0.75rem auto;
+}
+
+/* ==========================================================================
+   4. DASHBOARD & FORM PREVIEW (DASHBOARD.HTML)
+   ========================================================================== */
+.card-form, .card-preview, .card-table, .auth-card {
+  background-color: var(--card-bg);
+  border-radius: 8px;
+  padding: 1.5rem;
+  box-shadow: var(--shadow);
+}
+
+.form-group {
+  margin-bottom: 1rem;
+}
+
+.form-group label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 0.3rem;
+  font-size: 0.9rem;
+}
+
+.form-group input, .form-group select {
+  width: 100%;
+  padding: 0.55rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.form-actions {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 1.2rem;
+}
+
+.form-preview-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .form-preview-grid {
+    grid-template-columns: 1fr 1fr;
+    align-items: start;
+  }
+}
+
+.preview-box {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  background-color: #f9fbf9;
+  border: 1px solid #e0e0e0;
+  border-radius: 6px;
+  padding: 1rem;
+}
+
+.preview-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px dashed #e0e0e0;
+  padding-bottom: 0.5rem;
+}
+
+.preview-row:last-child {
+  border-bottom: none;
+}
+
+.preview-label {
+  font-weight: 600;
+  color: #555;
+  font-size: 0.9rem;
+}
+
+.table-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.table th, .table td {
+  padding: 0.75rem;
+  text-align: left;
+  border-bottom: 1px solid #eee;
+}
+
+.table th {
+  background-color: #f8f9fa;
+}
+
+.btn {
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.88rem;
+  font-weight: 600;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.btn-primary { background-color: var(--primary); color: white; }
+.btn-secondary { background-color: var(--secondary); color: white; }
+.btn-edit { background-color: #f57c00; color: white; margin-right: 0.2rem; }
+.btn-danger { background-color: #d32f2f; color: white; }
+
+.status-badge {
+  padding: 0.25rem 0.5rem;
+  border-radius: 12px;
+  font-size: 0.75rem;
+  font-weight: bold;
+}
+.badge-tanam { background-color: #e8f5e9; color: #2e7d32; }
+.badge-panen { background-color: #fff8e1; color: #f57c00; }
+.badge-olah { background-color: #e3f2fd; color: #1565c0; }
+.badge-bera { background-color: #f5f5f5; color: #616161; }
+
+.hidden { display: none !important; }
+
+/* ==========================================================================
+   5. MEDIA QUERIES (RESPONSIF TABLET & MOBILE)
+   ========================================================================== */
+@media (max-width: 992px) {
+  .header-container {
+    position: relative;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    background-color: var(--primary);
+    position: absolute;
+    top: 100%;
+    left: 0;
+    padding: 1rem 0;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15);
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    z-index: 100;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  .nav-link {
+    margin-right: 0;
+    padding: 0.6rem 1.5rem;
+    width: 100%;
+    text-align: center;
+  }
+
+  .nav-links .btn {
+    margin: 0.5rem 1.5rem;
+    text-align: center;
+  }
+
+  .stats-grid, .features-grid, .steps-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 576px) {
+  .stats-grid, .features-grid, .steps-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.scroll-container {
+  display: flex;
+  gap: 1rem;
+  overflow-x: auto;
+  padding-bottom: 1rem;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+}
+
+.scroll-container .stat-card {
+  flex: 0 0 85%;
+  scroll-snap-align: start;
+}
+
+.scroll-container::-webkit-scrollbar {
+  height: 6px;
+}
+.scroll-container::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 4px;
+}
+
+@media (min-width: 768px) {
+  .scroll-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    overflow-x: visible;
+  }
+  .scroll-container .stat-card {
+    flex: none;
+  }
+}
+
+.table-header-responsive {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-bottom: 1.25rem;
+}
+
+.table-header-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  width: 100%;
+}
+
+.table-header-actions input[type="search"] {
+  width: 100% !important;
+}
+
+.table-header-actions .btn {
+  text-align: center;
+  width: 100%;
+}
+
+.action-buttons {
+  display: flex;
+  gap: 0.35rem;
+  align-items: center;
+  white-space: nowrap;
+}
+
+.btn-sm {
+  padding: 0.35rem 0.65rem !important;
+  font-size: 0.78rem !important;
+  border-radius: 4px;
+}
+
+@media (min-width: 640px) {
+  .table-header-responsive {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .table-header-actions {
+    flex-direction: row;
+    width: auto;
+  }
+
+  .table-header-actions input[type="search"] {
+    width: 220px !important;
+  }
+
+  .table-header-actions .btn {
+    width: auto;
+  }
+}
+
+#solusi.hero-card {
+  text-align: left;
+  padding: 2.5rem;
+}
+
+#solusi header {
+  margin-bottom: 1rem;
+  width: 100%;
+}
+
+#solusi header h2 {
+  color: #14532d;
+  font-size: 1.6rem;
+  margin-bottom: 0.75rem;
+}
+
+#solusi p {
+  max-width: 100%;
+  margin: 0 0 1.5rem 0 !important;
+  padding: 0 !important;
+  color: #4b5563;
+  text-align: left;
+}
+
+#solusi .btn {
+  display: inline-block;
+}
+
+/* ==========================================================================
+   6. FOOTER
+   ========================================================================== */
+.footer {
+  background-color: #1f2937;
+  color: #9ca3af;
+  padding: 2rem 0 1rem 0;
+  margin-top: 4rem;
+  text-align: center;
+}

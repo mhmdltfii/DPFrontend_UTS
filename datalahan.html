@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AgroManage - Data Lahan Pertanian</title>
+  <link rel="stylesheet" href="./assets/css/style.css">
+</head>
+<body>
+
+  <header class="header">
+    <section class="container header-container">
+      <h1 class="logo">🌱 AgroManage</h1>
+      
+      <button class="menu-toggle" id="menuToggle" aria-label="Toggle Navigation Menu">☰</button>
+
+      <nav class="nav-links" id="navLinks" aria-label="Navigasi Utama">
+        <a href="index.html" class="nav-link">Beranda</a>
+        <a href="datalahan.html" class="nav-link highlight-link">Data Lahan</a>
+        <a href="login.html" class="btn btn-primary">Login</a>
+      </nav>
+    </section>
+  </header>
+
+  <main class="container">
+    <header style="margin-bottom: 2rem; text-align: center;">
+      <h2 style="color: var(--primary); font-size: 2rem; margin-bottom: 0.5rem;">Data Inventaris Lahan Pertanian</h2>
+      <p style="color: #6b7280;">Laporan terpusat pemantauan status vegetasi dan akumulasi luas area lahan.</p>
+    </header>
+
+    <section class="stats-grid" style="margin-bottom: 2rem;" aria-label="Ringkasan Total Data">
+      <article class="stat-card"><h3 id="statTotalUnit">0</h3><p>Total Blok Lahan</p></article>
+      <article class="stat-card"><h3 id="statTotalLuas">0 m²</h3><p>Akumulasi Luas Area</p></article>
+      <article class="stat-card"><h3 id="statMasaTanam">0</h3><p>Lahan Masa Tanam</p></article>
+      <article class="stat-card"><h3 id="statSiapPanen">0</h3><p>Lahan Siap Panen</p></article>
+    </section>
+
+    <section class="card-table" aria-label="Tabel Inventaris Lahan">
+      <header class="table-header">
+        <h2>Daftar Terdaftar</h2>
+        <input type="search" id="searchInput" placeholder="Cari nama, lokasi, komoditas..." 
+        style="padding: 0.5rem 0.8rem; border: 1px solid #ccc; border-radius: 4px; font-size: 0.88rem; width: 250px;">
+      </header>
+      
+      <figure style="overflow-x: auto; margin: 0;">
+        <table class="table">
+          <thead>
+            <tr>
+              <th scope="col">No</th>
+              <th scope="col">Nama Blok Lahan</th>
+              <th scope="col">Lokasi / Wilayah</th>
+              <th scope="col">Luas Area (m²)</th>
+              <th scope="col">Komoditas Tanaman</th>
+              <th scope="col">Tanggal Tanam</th>
+              <th scope="col">Status Vegetasi</th>
+            </tr>
+          </thead>
+          <tbody id="lahanTableBody">
+          </tbody>
+        </table>
+      </figure>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <section class="container">
+      <h3 style="color: white; margin-bottom: 0.4rem;">🌱 AgroManage</h3>
+      <p style="font-size: 0.85rem; color: #9ca3af;">&copy; 2026 AgroManage. Platform Digitalisasi & Management Data Lahan Pertanian.</p>
+    </section>
+  </footer>
+
+  <script type="module" src="./assets/js/dashboardapp.js"></script>
+</body>
+</html>
